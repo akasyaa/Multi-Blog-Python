@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+{% block content %}
+    <div class="post">
+        <div class="post-header text-center">
+            <div class="post-title">
+                <a href="/blog/{{p.key().id()}}">{{p.subject}}</a>
+            </div>
+            <div class="post-date">
+                {{p.created.strftime("%b %d, %Y")}}
+            </div>
+        </div>
+        <hr/>
+        <div class="post-content">
+            {{p._render_text | safe}}
+        </div>
+        <div class="post-likes">
+            <p class="likes">Likes {{p.liked}}</p>
+            {% if not p.userid == user.key().id() %}
+                <a href="/blog/{{p.key().id()}}/like" class="btn btn-success">Like this post!</a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

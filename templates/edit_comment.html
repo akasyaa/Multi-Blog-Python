@@ -1,0 +1,15 @@
+{% extends "blog_index.html" %}
+{% block content %}
+    <div class="comments">
+        <h3 class="mb-3">Edit a comment</h3>
+        <form method="post" action="/blog/{{comment.key().id()}}/ce">
+            <div class="container">
+                <div class="row mb-3">
+                    <p class="col-md-2 text-center"><strong>{{user.name}}</strong></p>
+                    <input class="col-md-7 mr-2 form-control" type="text" name="comment" value="{{comment.content}}" />
+                    <button class="col-md-2 btn btn-warning" type="submit" name="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

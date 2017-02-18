@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+{% block content %}
+    <div class="form-page">
+        <h2>Signup</h2>
+        <form method="post">
+            <label>
+                <div>Username</div>
+                <input class="form-control" type="text" name="username" value="{{name}}">
+            </label>
+            <label>
+                <div>Password</div>
+                <input class="form-control" type="password" name="password">
+            </label>
+            <label>
+                <div>Confirm Password</div>
+                <input class="form-control" type="password" name="verify">
+                <span class="error">{{pwderror}}</span>
+            </label>
+            <label>
+                <div>Email (Optional)</div>
+                <input class="form-control" type="text" name="email" value="{{email}}">
+            </label>
+            <div class="error">{{error}}</div>
+            <button class="btn btn-primary mt-2">Submit</button>
+            <a href="/" class="btn btn-danger mt-2">Cancel</a>
+        </form>
+    </div>
+{% endblock %}

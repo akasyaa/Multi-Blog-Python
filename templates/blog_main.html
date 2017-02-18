@@ -1,0 +1,8 @@
+{% extends "blog_index.html" %}
+{% block content %}
+    <p class="text-center">{{notice}}</p>
+    {% for p in posts %}
+        {{ p.render(user) | safe }}
+        <br><br>
+    {% endfor %}
+{% endblock %}

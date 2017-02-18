@@ -1,0 +1,91 @@
+label {
+    display: block;
+}
+
+.error {
+    color: red;
+}
+
+.front-page {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    margin-top: 100px;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.front-page .btn {
+    margin-top: 10px;
+}
+
+.new-post input[type=text] {
+    width: 600px;
+    font-size: 20px;
+    padding: 2px;
+}
+
+.new-post textarea {
+    width: 600px;
+    height: 400px;
+}
+
+.post {
+    margin: 30px;
+}
+
+.post-control {
+    margin-top: 10px;
+}
+
+.post-title a {
+    font-size: 30px;
+    color: inherit;
+}
+
+.likes {
+    color: green;
+}
+
+.navbar {
+    margin-bottom: 10px;
+}
+
+.nav-link {
+    margin-right: 5px;
+}
+
+.form-page {
+    margin-top: 15px;
+}
+
+.form-page input {
+    width: 250px;
+}
+
+.back-to-main {
+    float: right;
+}
+
+.comments {
+    padding-top: 50px;
+}
+
+.comments h3 {
+    color: yellowgreen;
+}
+
+.dcomment {
+    color: red;
+}
+
+.welcome-page a {
+    margin-top: 5px;
+}
+
+@media (max-width: 991px) {
+    .nav-link {
+        margin-top: 10px;
+    }
+}

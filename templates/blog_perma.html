@@ -1,0 +1,33 @@
+{% extends "blog_index.html" %}
+{% block content %}
+    {{post.render(user) | safe}}
+    <div class="post-control">
+        {% if post.userid == user.key().id() %}
+            <a href="{{post.key().id()}}/edit" class="btn btn-warning">Edit Post</a>
+            <a href="{{post.key().id()}}/delete" class="btn btn-danger">Delete Post</a>
+        {% endif %}
+    </div>
+    <div class="back-to-main">
+        <a href="/blog" class="btn btn-primary">Back to main</a>
+        <div class="clear"></div>
+    </div>
+    <div class="comments">
+        <hr/>
+        <h3 class="mb-3">Leave a comment</h3>
+        <form method="post" action="{{post.key().id()}}/ca">
+            <div class="container">
+                <div class="row mb-3">
+                    <p class="col-md-2 text-center"><strong>{{user.name}}</strong></p>
+                    <input class="col-md-7 mr-2 form-control" type="text" name="comment" />
+                    <button class="col-md-2 btn btn-warning" type="submit" name="submit">Submit</button>
+                </div>
+                <div class="row">
+                    {% for c in comments %}
+                        {{ c.render(user) | safe }}
+                        <br>
+                    {% endfor %}
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

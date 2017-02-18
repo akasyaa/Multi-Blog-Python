@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+{% block content %}
+    <div class="form-page">
+        <h2>Login</h2>
+        <form method="post">
+            <label>
+                <div>Username</div>
+                <input class="form-control" type="text" name="username" autocomplete="off">
+            </label>
+            <label>
+                <div>Password</div>
+                <input class="form-control" type="password" name="password" autocomplete="off">
+            </label>
+            <div class="error">{{error}}</div>
+            <button class="btn btn-primary mt-2">Log In</button>
+            <a href="/" class="btn btn-danger mt-2">Cancel</a>
+        </form>
+        <hr/>
+        <p>No account? Please sign up by clicking the button below.</p>
+        <a href="/signup" class="btn btn-info">Sign Up</a>
+    </div>
+{% endblock %}

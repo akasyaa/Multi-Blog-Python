@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+{% block content %}
+    <div class="comment">
+        <div class="container">
+            <div class="row">
+                {% if c.userid == user.key().id() %}
+                    <a class="dcomment mr-3" href="/blog/{{c.key().id()}}/cd">x</a>
+                    <a class="mr-3" href="/blog/{{c.key().id()}}/ce">edit</a>
+                {% endif %}
+                <p><strong>{{c.username}}</strong> {{c.content}}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

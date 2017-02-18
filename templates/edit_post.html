@@ -1,0 +1,21 @@
+{% extends "blog_index.html" %}
+{% block content %}
+    <h2>Edit Post</h2>
+    <div class="new-post">
+        <form method="post">
+            <label>
+                <div>Subject</div>
+                <input class="form-control" type="text" name="subject" value="{{post.subject}}">
+            </label>
+            <label>
+                <div>Content</div>
+                <textarea class="form-control" name="content">{{post.content}}</textarea>
+            </label>
+
+            <div class="error">{{error}}</div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="/blog/{{post.key().id()}}" class="btn btn-danger">Cancel</a>
+        </form>
+    </div>
+{% endblock %}
